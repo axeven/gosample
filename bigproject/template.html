@@ -1,0 +1,31 @@
+{{define "template"}}
+<html>
+    <head>
+        <title>Big Project</title>
+        <script type="text/javascript" src="/static/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="/static/moment.min.js"></script>
+        <script type="text/javascript" src="/static/main.js"></script>
+    </head>
+    <body>
+        <h1>Big Project</h1>
+        <table>
+            <thead>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>MSISDN</th>
+                    <th>Email</th>
+                    <th>birth_date</th>
+                    <th>created_time</th>
+                    <th>update_time</th>
+                    <th>user_age</th>
+            </thead>
+            <tbody id='tbldata'></tbody>
+        </table>
+        <form id="filterform" method="GET">
+            <input type="text" id="filterinp" /> 
+            <button type="submit" id="filterbtn">Filter</button>
+        </form>
+        <div>Visitor count: {{.}}</div>
+    </body>
+</html>
+{{end}}
