@@ -118,7 +118,7 @@ func setUserRedis(c redis.Conn, userList []User, filterName *string, offset, lim
 	dataKey := KEY_USER_PREFIX + *filterName + "." + strconv.Itoa(offset) + "." + strconv.Itoa(limit)
 	dataString, err := json.Marshal(userList)
 	checkErr(err, "Json marshal user list failure", false)
-	_, err = c.Do("SET", dataKey, 15*60, dataString)
+	_, err = c.Do("SETEX", dataKey, 15*60, dataString)
 	checkErr(err, "Redis set user list failure", false)
 }
 
