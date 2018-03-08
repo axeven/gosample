@@ -1,3 +1,5 @@
 /gosample
 /vendor*
 /bigproject/bigproject
+/bigproject/debug
+/.vscode*

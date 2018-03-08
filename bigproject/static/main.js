@@ -1,15 +1,10 @@
 $(document).ready(function(){
-    $('#filterform').submit(function(event){
-        updateTblData($('#filterinp').val());
-        event.preventDefault();
-        return false;
-    });
-    $('#filterform').submit();
-    $('#filterinp').keyup(function(){
-        if($('#filterinp').val().length >= 3){
-            $('#filterform').submit();
+    $('#filterinp').keyup(function(e){
+        if(e.keyCode == 13 || $('#filterinp').val().length >= 3){
+            updateTblData($('#filterinp').val());
         }
     });
+    updateTblData("");
 });
 function updateTblData(filtertext){
     $('#tbldata').empty();
